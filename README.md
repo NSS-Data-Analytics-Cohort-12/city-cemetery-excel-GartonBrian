@@ -13,26 +13,55 @@ After working through these questions, you will shift gears to create marketing 
 ![top 10 causes](assets/top_10_death_causes.png)
 
 1. Use a pivot table to find the 10 most common (known) recorded causes of death, and evaluate the counts of each type. Once you have your metrics, plot these in a **bar chart**. In the analysis of the top 10 causes of death, you may see spelling mistakes that are affecting your counts. For example, you can assume Cholera and Cholrea are the same cause of death. Create a new column in the original dataset to update spelling errors to make your count of the top 10 causes more accurate. You will need to **update and refresh your pivot table** to see changes applied. (For the new column you create, copy the column with `Cause of Death/Burial` and correct spelling errors only for causes that appear in your top 10 list).
+Sound like a lot of finicky work for future me
+Created a pivot table that needs work. What
+
 
 2. Create a line chart showing the number of burials per year. How would you describe the overall trend in number of burials per year? In what years were there the most burials? Can you think of any plausible reason why?
+Done The cholorea epidemic in 1864 added a lot of dead while the largest additions occurerd durring the civil war (1861 to 1865) or specifically after the battle of nashivlle (1864)
+
+
 
 3. Create a pivot table that shows the number of burials per year per month. Your rows should be years and columns should be months.   
 a. Apply conditional formatting to change the background color based on the number of burials. You can read about using conditional formatting here: https://support.microsoft.com/en-us/office/use-conditional-formatting-to-highlight-information-fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f  
 b. Drill down into any months that stand out to investigate. What do you find?
+Done. Also included chart. thinking bar chart that shows stacked months per year would be nice. May have too many years for that to look good...
+Drilled down years seem to be normal for the year aside from when cholorea killed many people
+
 
 4. Create a "Decade" column based off of the Burial Year column. Use a pivot table to examine burials for each decade. Look at the total number of burials and the proportion (aka percentage) of male burials and female burials. Create a clustered bar chart to show how male and female burials have changed over time. If you could use a refresher on percentages and proportions, here are some resources:  
 * https://www.wikihow.com/Calculate-Percentages
 * https://www.wikihow.com/Solve-Proportions
 
+done
+
 5. Next look at how age at the time of death has changed over time. Add a column to the original dataset to classify each row to one of the following categories (0-18, 19-25, 26-40, 41-64, and 65+). Do this by creating a lookup table with VLOOKUP. Be sure to think about a strategy to deal with missing values. Also, create a "Year Group" dividing the records up based on burial year using a table and a VLOOKUP. Use the following groups: Before 1880, 1880-1900, 1901-1920, After 1920. Use a grouped bar chart to show how the proportion of burials per age group has changed over time. How would you describe the trends in terms of proportion of burials per age group over time?
+
+done
+
 
 6. Create a new column titled Last Name. Extract the last name from the Name column by subsetting to all characters to the left of the comma (see the DataCamp exercise titled "String Information - LEN, SEARCH" from the Data Analysis with Spreadsheets if you need help with this). This will result in many errors for rows missing commas.   
     a.  Drill down to those rows without a comma - what do you notice?  
+The majority seem to be infants
     b.  What are the most common last names of people buried in this cemetery?  
+Smith
     c.  There was a particularly famous person buried in this cemetery. Can you find that person?
+James K Polk. This was on their website.
+Volume	Name	Last name	Burial Month	Month No.	Burial Day	Burial Year	Burial Decade	Burial Year Group	Sex	Race	Age	Age Group	Residence	Cause of Death/Burial	Ave	Section/Lot	Remarks
+
+4-1849	 Ex president Polk, J.K.	 Ex president Polk	Jun	6	16	1849	1840	Before 1880	M	W	64	41-64	City	Complicated	Central	lot	brick work
+
 
 7. The Civil War ended in April, 1865, with the last full year of fighting occurring in 1864.  
     a. Create an additional sheet using FILTER() to pull only the burials that occurred in 1864. Name this new sheet "Burials_1864". In this new sheet, create a new column called age_category. If the individual was age 0 put "Infant". If the individual was not an infant but under age 18, put "Child". Everyone aged 18 and above should be listed as "Adult".
+Done
+
     b.  Find the Mean() age for those classified as "Child" and then again for those classified as "Adult".  
+done
+
     c.  Create a burial_date column using the DATE() function to combine the burial year, month, and day. What do you notice when you apply this function to your data?   
+done. The date function views "year one" as 1/1/1901
+
+
     d.  Find the last infant to be buried in 1864. Do this by first finding the maximum date that an infant was buried using the MAXIFS function. Then use FILTER to find the infants that were buried on that date. You'll need to apply multiple conditions in your filter. This can be accomplished by multiplying the desired conditions. See https://www.spreadsheetclass.com/excel-filter-function/ for more information about applying complex conditions inside the filter function.
+
